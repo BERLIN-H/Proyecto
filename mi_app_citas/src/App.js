@@ -1,5 +1,6 @@
 import React from 'react';
-import AppointmentSystem from './Frontend/AppointmentSystem';
+import AppointmentSystem from './pages/AppointmentSystem';
+
 
 function App() {
   return (

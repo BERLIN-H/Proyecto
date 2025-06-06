@@ -1,0 +1,194 @@
+.
+├── 2.env
+├── README.md
+├── env
+│   ├── Lib
+│   │   ├── python3.12
+│   │   │   └── site-packages
+│   │   └── site-packages
+│   │       ├── Django-4.2.7.dist-info
+│   │       ├── PyJWT-2.10.1.dist-info
+│   │       ├── aiohappyeyeballs
+│   │       ├── aiohappyeyeballs-2.6.1.dist-info
+│   │       ├── aiohttp
+│   │       ├── aiohttp-3.12.4.dist-info
+│   │       ├── aiohttp_retry
+│   │       ├── aiohttp_retry-2.9.1.dist-info
+│   │       ├── aiosignal
+│   │       ├── aiosignal-1.3.2.dist-info
+│   │       ├── amqp
+│   │       ├── amqp-5.3.1.dist-info
+│   │       ├── asgiref
+│   │       ├── asgiref-3.8.1.dist-info
+│   │       ├── attr
+│   │       ├── attrs
+│   │       ├── attrs-25.3.0.dist-info
+│   │       ├── billiard
+│   │       ├── billiard-4.2.1.dist-info
+│   │       ├── celery
+│   │       ├── celery-5.3.4.dist-info
+│   │       ├── certifi
+│   │       ├── certifi-2025.4.26.dist-info
+│   │       ├── charset_normalizer
+│   │       ├── charset_normalizer-3.4.2.dist-info
+│   │       ├── click
+│   │       ├── click-8.2.1.dist-info
+│   │       ├── click_didyoumean
+│   │       ├── click_didyoumean-0.3.1.dist-info
+│   │       ├── click_plugins
+│   │       ├── click_plugins-1.1.1.dist-info
+│   │       ├── click_repl
+│   │       ├── click_repl-0.3.0.dist-info
+│   │       ├── colorama
+│   │       ├── colorama-0.4.6.dist-info
+│   │       ├── corsheaders
+│   │       ├── cron_descriptor
+│   │       ├── cron_descriptor-1.4.5.dist-info
+│   │       ├── cronlog.py
+│   │       ├── crontab.py
+│   │       ├── crontabs.py
+│   │       ├── dateutil
+│   │       ├── decouple.py
+│   │       ├── django
+│   │       ├── django_celery_beat
+│   │       ├── django_celery_beat-2.5.0.dist-info
+│   │       ├── django_cors_headers-4.3.1.dist-info
+│   │       ├── django_timezone_field-7.1.dist-info
+│   │       ├── djangorestframework-3.14.0.dist-info
+│   │       ├── frozenlist
+│   │       ├── frozenlist-1.6.0.dist-info
+│   │       ├── idna
+│   │       ├── idna-3.10.dist-info
+│   │       ├── jwt
+│   │       ├── kombu
+│   │       ├── kombu-5.5.3.dist-info
+│   │       ├── multidict
+│   │       ├── multidict-6.4.4.dist-info
+│   │       ├── pip
+│   │       ├── pip-25.1.1.dist-info
+│   │       ├── prompt_toolkit
+│   │       ├── prompt_toolkit-3.0.51.dist-info
+│   │       ├── propcache
+│   │       ├── propcache-0.3.1.dist-info
+│   │       ├── python_crontab-3.2.0.dist-info
+│   │       ├── python_dateutil-2.9.0.post0.dist-info
+│   │       ├── python_decouple-3.8.dist-info
+│   │       ├── pytz
+│   │       ├── pytz-2025.2.dist-info
+│   │       ├── redis
+│   │       ├── redis-5.0.1.dist-info
+│   │       ├── requests
+│   │       ├── requests-2.32.3.dist-info
+│   │       ├── rest_framework
+│   │       ├── schedule
+│   │       ├── schedule-1.2.2.dist-info
+│   │       ├── six-1.17.0.dist-info
+│   │       ├── six.py
+│   │       ├── sqlparse
+│   │       ├── sqlparse-0.5.3.dist-info
+│   │       ├── timezone_field
+│   │       ├── twilio
+│   │       ├── twilio-8.10.0.dist-info
+│   │       ├── tzdata
+│   │       ├── tzdata-2025.2.dist-info
+│   │       ├── urllib3
+│   │       ├── urllib3-2.4.0.dist-info
+│   │       ├── vine
+│   │       ├── vine-5.1.0.dist-info
+│   │       ├── wcwidth
+│   │       ├── wcwidth-0.2.13.dist-info
+│   │       ├── yarl
+│   │       └── yarl-1.20.0.dist-info
+│   ├── Scripts
+│   │   ├── Activate.ps1
+│   │   ├── activate
+│   │   ├── activate.bat
+│   │   ├── celery.exe
+│   │   ├── deactivate.bat
+│   │   ├── django-admin.exe
+│   │   ├── normalizer.exe
+│   │   ├── pip.exe
+│   │   ├── pip3.12.exe
+│   │   ├── pip3.exe
+│   │   ├── python.exe
+│   │   ├── pythonw.exe
+│   │   └── sqlformat.exe
+│   ├── bin
+│   │   ├── Activate.ps1
+│   │   ├── activate
+│   │   ├── activate.csh
+│   │   ├── activate.fish
+│   │   ├── celery
+│   │   ├── django-admin
+│   │   ├── normalizer
+│   │   ├── pip
+│   │   ├── pip3
+│   │   ├── pip3.12
+│   │   ├── python -> python3.12
+│   │   ├── python3 -> python3.12
+│   │   ├── python3.12 -> /Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12
+│   │   └── sqlformat
+│   ├── include
+│   │   └── python3.12
+│   └── pyvenv.cfg
+├── estructura_proyecto.txt
+├── manage.py
+├── mi_app_citas
+│   ├── Backend
+│   │   ├── __init__.py
+│   │   ├── appointments
+│   │   │   ├── __init__.py
+│   │   │   ├── celery.py
+│   │   │   ├── models.py
+│   │   │   ├── serializers.py
+│   │   │   ├── settings.py
+│   │   │   ├── tasks.py
+│   │   │   ├── urls.py
+│   │   │   ├── views.py
+│   │   │   ├── whatsapp_service.py
+│   │   │   └── wsgi.py
+│   │   ├── db.sqlite3
+│   │   └── logs
+│   │       └── whatsapp.log
+│   ├── README.md
+│   ├── __init__.py
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   └── src
+│       ├── App.css
+│       ├── App.js
+│       ├── App.test.js
+│       ├── Frontend
+│       ├── components
+│       │   ├── AppointmentForm.jsx
+│       │   ├── AppointmentsList.jsx
+│       │   ├── FloatingShapes.jsx
+│       │   ├── LoginForm.jsx
+│       │   └── Navbar.jsx
+│       ├── hooks
+│       │   ├── useAppointmentData.js
+│       │   ├── useAuth.js
+│       │   └── useWhatsAppService.js
+│       ├── index.css
+│       ├── index.js
+│       ├── logo.svg
+│       ├── pages
+│       │   └── AppointmentSystem.jsx
+│       ├── reportWebVitals.js
+│       ├── setupTests.js
+│       └── utils
+│           └── statusHelpers.js
+├── recordatorios_diarios.py
+├── requirements.txt
+├── settings.py
+├── test_recordatorio.py
+└── urls.py
+
+109 directories, 83 files
