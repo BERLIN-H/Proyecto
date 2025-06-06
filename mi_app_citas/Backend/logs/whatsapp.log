@@ -1,0 +1,8 @@
+INFO 2025-06-03 14:39:52,262 whatsapp_service 12048 10264 Recordatorio enviado a Juan Pérez Test - SID: SM4bffc8494515fd8a90570a338e07f5df
+INFO 2025-06-03 14:49:30,213 whatsapp_service 11880 15840 Recordatorio enviado a Juan Pérez Test - SID: SM84d98ffcd8b13c8d08c4f37d8eda2b51
+INFO 2025-06-03 17:26:17,089 whatsapp_service 12128 10016 Recordatorio enviado a Juan Pérez Test - SID: SMa314a007fe7bd7c41d7461aa374e0915
+INFO 2025-06-03 17:27:37,149 whatsapp_service 17096 4436 Recordatorio enviado a Juan Pérez Test - SID: SM6b60104b5c7e98a9dae5ef60dfe7c4b7
+INFO 2025-06-04 08:46:12,903 whatsapp_service 2216 7100 Recordatorio enviado a Juan Pérez Test - SID: SM91504d21ecc3639abbdfe6cf03020a24
+INFO 2025-06-04 08:46:27,535 whatsapp_service 10136 16176 Recordatorio enviado a Juan Pérez Test - SID: SM7d4c88f3d68fd29ca8f7562752a4a98e
+ERROR 2025-06-04 09:56:09,052 whatsapp_service 7248 7104 Error enviando recordatorio WhatsApp: HTTPSConnectionPool(host='api.twilio.com', port=443): Max retries exceeded with url: /2010-04-01/Accounts/ACfd9f0ae64ac94e8ea3e984513ae83cd2/Messages.json (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+INFO 2025-06-04 13:59:56,414 whatsapp_service 6824 4788 Recordatorio enviado a Juan Pérez Test - SID: SMa0724283612a1702aae069ffb84082bc
