@@ -1,0 +1,34 @@
+# Entornos virtuales de Python
+.venv/
+venv/
+ENV/
+env/
+
+# Variables de entorno
+.env
+.env.*
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de compilación o temporales
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+*.tmp
+*.swp
+*.bak
+*.pid
+
+# VSCode settings (opcional)
+.vscode/
+
+# Cove
