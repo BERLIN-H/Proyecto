@@ -7,7 +7,7 @@ export const useWhatsAppService = () => {
   const sendConfirmationMessage = async (appointment) => {
     setSending(true);
     try {
-      const response = await fetch(`${apiBase}/api/send-whatsapp-confirmation/`, {
+      const response = await fetch(`${apiBase}/send-confirmation/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,4 +1,3 @@
-// hooks/useAppointmentData.js
 import { useState, useEffect } from 'react';
 
 const useAppointmentData = (user) => {
@@ -7,18 +6,17 @@ const useAppointmentData = (user) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-const API_PREFIX = '/api';
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000' + API_PREFIX;
-
+  const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
   const loadServices = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/services`, {
+      const response = await fetch(`${API_BASE_URL}/services/`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       });
       if (!response.ok) throw new Error(`Error ${response.status}: ${response.statusText}`);
       const data = await response.json();
+console.log("🔍 Servicios recibidos desde backend:", data);
       setServices(data);
     } catch (err) {
       console.error('Error cargando servicios:', err);
@@ -34,7 +32,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000' + 
 
   const loadAppointments = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/appointments`, {
+      const response = await fetch(`${API_BASE_URL}/appointments/`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -50,7 +48,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000' + 
   const createAppointment = async (appointmentData) => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE_URL}/appointments`, {
+      const response = await fetch(`${API_BASE_URL}/appointments/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(appointmentData)
@@ -77,7 +75,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000' + 
   const updateAppointment = async (id, updateData) => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE_URL}/appointments/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/appointments/${id}/`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updateData)
@@ -97,7 +95,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000' + 
 
   const getAvailableSlots = async (date, serviceId) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/available-slots?date=${date}&serviceId=${serviceId}`);
+      const response = await fetch(`${API_BASE_URL}/available-slots/?date=${date}&serviceId=${serviceId}`);
       if (!response.ok) throw new Error(`Error ${response.status}: ${response.statusText}`);
       return await response.json();
     } catch (err) {

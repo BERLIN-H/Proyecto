@@ -1,6 +1,8 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
+from .models import Appointment, Service
+
 import json
 import logging
 from datetime import datetime
@@ -191,3 +193,19 @@ def update_appointment(request, appointment_id):
 
     except Exception as e:
         return JsonResponse({"success": False, "error": str(e)}, status=500)
+    
+@csrf_exempt
+def list_services(request):
+    if request.method == 'GET':
+        services = list(Service.objects.values())
+        return JsonResponse(services, safe=False)
+
+@csrf_exempt
+def list_create_appointments(request):
+    if request.method == 'GET':
+        appointments = list(Appointment.objects.values())
+        return JsonResponse(appointments, safe=False)
+    elif request.method == 'POST':
+        data = json.loads(request.body)
+        appointment = Appointment.objects.create(**data)
+        return JsonResponse({'id': appointment.id})

@@ -4,6 +4,6 @@ from appointments.views import ping
 
 urlpatterns = [
     path('', ping, name='ping'),
-    path('api/', include('appointments.urls')),  # Aquí se cargan las rutas del app
+    path('', include('appointments.urls')),  # Aquí se cargan las rutas del app
     path('admin/', admin.site.urls),
 ]
