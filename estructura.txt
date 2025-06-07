@@ -1,0 +1,21 @@
+.
+├── 2.env
+├── README.md
+├── env
+│   └── pyvenv.cfg
+├── estructura.txt
+├── estructura_proyecto.txt
+├── manage.py
+├── mi_app_citas
+│   ├── README.md
+│   ├── __init__.py
+│   ├── package-lock.json
+│   └── package.json
+├── recordatorios_diarios.py
+├── requirements.txt
+├── settings.py
+├── test_recordatorio.py
+├── urls.py
+└── wsgi.py
+
+3 directories, 16 files
