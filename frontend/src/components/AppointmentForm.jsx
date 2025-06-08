@@ -18,7 +18,6 @@ const AppointmentForm = ({
   getMinDate
 }) => {
   return (
-    
     <div className="max-w-2xl mx-auto">
       <div className="backdrop-blur-sm bg-white/80 rounded-3xl shadow-xl border border-slate-200/50 p-8 md:p-12">
         <div className="text-center mb-8">

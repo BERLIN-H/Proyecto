@@ -1,3 +1,4 @@
+// --- useAppointmentData.js ---
 import { useState, useEffect } from 'react';
 
 const useAppointmentData = (user) => {
@@ -8,25 +9,30 @@ const useAppointmentData = (user) => {
 
   const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
+  const fallbackServices = [
+    { id: 1, name: 'Consulta Individual', duration: 60, price: 80000 },
+    { id: 2, name: 'Terapia de Pareja', duration: 90, price: 120000 },
+    { id: 3, name: 'Terapia Familiar', duration: 90, price: 150000 },
+    { id: 4, name: 'Evaluación Psicológica', duration: 120, price: 200000 }
+  ];
+
   const loadServices = async () => {
     try {
       const response = await fetch(`${API_BASE_URL}/services/`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       });
-      if (!response.ok) throw new Error(`Error ${response.status}: ${response.statusText}`);
       const data = await response.json();
-console.log("🔍 Servicios recibidos desde backend:", data);
+      if (!response.ok || !Array.isArray(data) || data.length === 0) {
+        console.warn('⚠️ Backend sin servicios, usando mock');
+        setServices(fallbackServices);
+        return;
+      }
       setServices(data);
     } catch (err) {
       console.error('Error cargando servicios:', err);
       setError(err.message);
-      setServices([
-        { id: 1, name: 'Consulta Individual', duration: 60, price: 80000 },
-        { id: 2, name: 'Terapia de Pareja', duration: 90, price: 120000 },
-        { id: 3, name: 'Terapia Familiar', duration: 90, price: 150000 },
-        { id: 4, name: 'Evaluación Psicológica', duration: 120, price: 200000 }
-      ]);
+      setServices(fallbackServices);
     }
   };
 

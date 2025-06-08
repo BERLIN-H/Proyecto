@@ -1,32 +1,29 @@
 import React from 'react';
 import { CheckCircle, XCircle, Phone } from 'lucide-react';
-import { useWhatsAppService } from '../hooks/useWhatsAppService'; // Asegúrate de tener este hook creado
+import { useWhatsAppService } from '../hooks/useWhatsAppService';
 
-const AppointmentsList = ({ appointments, user, updateAppointment }) => {
+const AppointmentsList = ({ appointments, user }) => {
   const { sendConfirmationMessage } = useWhatsAppService();
 
   const handleConfirm = async (appointment) => {
     try {
-      await updateAppointment(appointment.id, {
-        status: 'confirmed',
-        reminder_sent: true,
-      });
+      // Actualización local (solo cambia el estado en memoria)
+      appointment.status = 'confirmed';
+      appointment.reminder_sent = true;
 
-      // Enviar mensaje de confirmación por WhatsApp
+      // Enviar mensaje por WhatsApp
       await sendConfirmationMessage(appointment);
 
       alert('✅ Cita confirmada y mensaje enviado por WhatsApp');
     } catch (error) {
-      alert('❌ Error al confirmar o enviar mensaje: ' + error.message);
+      alert('❌ Error al enviar mensaje: ' + error.message);
     }
   };
 
   const handleCancel = async (appointment) => {
     try {
-      await updateAppointment(appointment.id, {
-        status: 'cancelled',
-      });
-      alert('🚫 Cita cancelada');
+      appointment.status = 'cancelled';
+      alert('🚫 Cita cancelada (solo en vista local)');
     } catch (error) {
       alert('❌ Error al cancelar: ' + error.message);
     }

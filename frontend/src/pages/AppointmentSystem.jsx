@@ -75,48 +75,49 @@ const AppointmentSystem = () => {
     loadSlots();
   }, [selectedDate, selectedService, appointments]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!selectedDate || !selectedTime || !selectedService || !clientData.name) {
-      setMessage('Por favor complete todos los campos requeridos');
-      return;
+  if (!selectedDate || !selectedTime || !selectedService || !clientData.name) {
+    setMessage('Por favor complete todos los campos requeridos');
+    return;
+  }
+
+  setLoading(true);
+  setMessage('');
+
+  try {
+    const selectedServiceObj = services.find(s => s.id == selectedService);
+    const appointmentData = {
+      client_name: clientData.name,
+      client_phone: clientData.phone,
+      client_email: clientData.email,
+      date: selectedDate,
+      time: selectedTime,
+      service_name: selectedServiceObj?.name,
+      service_id: selectedServiceObj?.id,
+      notes: clientData.notes
+    };
+
+    await createAppointment(appointmentData);
+    setMessage('✅ Cita agendada correctamente. Espera confirmación por WhatsApp.');
+
+    // No se envía mensaje aquí
+    setSelectedDate('');
+    setSelectedTime('');
+    setSelectedService('');
+    if (user.role === 'admin') {
+      setClientData({ name: '', phone: '', email: '', notes: '' });
     }
+    setAvailableSlots([]);
 
-    setLoading(true);
-    setMessage('');
+  } catch (error) {
+    setMessage('Error al agendar la cita: ' + error.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
-    try {
-      const selectedServiceObj = services.find(s => s.id == selectedService);
-      const appointmentData = {
-        client_name: clientData.name,
-        client_phone: clientData.phone,
-        client_email: clientData.email,
-        date: selectedDate,
-        time: selectedTime,
-        service_name: selectedServiceObj?.name,
-        service_id: selectedServiceObj?.id,
-        notes: clientData.notes
-      };
-
-      await createAppointment(appointmentData);
-      await sendConfirmationMessage(appointmentData);
-      setMessage('Cita agendada y mensaje enviado por WhatsApp');
-
-      setSelectedDate('');
-      setSelectedTime('');
-      setSelectedService('');
-      if (user.role === 'admin') {
-        setClientData({ name: '', phone: '', email: '', notes: '' });
-      }
-      setAvailableSlots([]);
-
-    } catch (error) {
-      setMessage('Error al agendar la cita: ' + error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const getMinDate = () => {
     const today = new Date();
